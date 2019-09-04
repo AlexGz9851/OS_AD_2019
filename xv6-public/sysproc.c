@@ -89,3 +89,11 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int sys_shutdown(void){
+    // en esta funcion debe ir el registro de hardware para la computadora especifica
+    // el registro para shutdown
+    // outw(direccion de memoria, valor que quiero ejecutar)
+    outw(0x604 , 0x2000);
+    return 0;
+}
